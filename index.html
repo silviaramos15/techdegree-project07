@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normaliz.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+	<title>Web App Dashboard</title>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h3>Your<span>App&trade;</span></h3>
+            <div class="header-container">
+                    <div class="graphic">
+                        <img src="images/icons/icon-bell.svg">
+                    </div>
+
+                    <div class="notifications">
+                        <!-- container element for our notifications -->
+                    </div>
+                    <div class="avatar">
+                        <img src="images/myAvatar.png" alt="My profile picture">
+                        <h5>Silvia Ramos</h5>
+                    </div>
+            </div>
+        </header>
+
+        <nav>
+            <ol class="nav-icons">
+                <a href="#"><img src="images/icons/icon-dashboard.svg" alt="dashboard"</a>
+                <a href="#"><img src="images/icons/icon-members.svg" alt="members"</a>
+                <a href="#"><img src="images/icons/icon-visits.svg" alt="visits"</a>
+                <a href="#"><img src="images/icons/icon-settings.svg" alt="settings"</a>
+                
+            </ol>
+        </nav>
+
+        <main>
+        <section class="widget">
+            <!-- First Section -->
+            <section class="input">
+                <h4>Dashboard</h4>
+                <div class="search-input">
+                    <input id="search" type="text" placeholder="Search">
+                </div>
+            </section>
+
+            <!-- Alert bar -->
+            <div class"alert" id="alert">
+                <!-- JS goes here -->
+            </div>
+
+             <!-- 2nd Section -->
+            <section class="traffic">
+                <div class="traffic-header">
+                    <h3>Traffic</h3>
+                    <ul class="traffic-nav">
+                        <li class="traffic-nav-link">Hourly</li>
+                        <li class="traffic-nav-link">Daily</li>
+                        <li class="traffic-nav-link">Weekly</li>
+                        <li class="traffic-nav-link">Monthly</li>
+                    </ul>
+                </div>
+                <div class="canvas">
+                    <!-- element line graph goes here -->
+                    <canvas id="traffic-chart"></canvas>
+                </div>
+            </section>
+
+             <!-- 3rd Section -->
+            <section class="charts">
+
+                <article class="bar">
+                    <h3>Daily Traffic</h3>
+
+                    <div class="widget-container-half">
+                        <!-- js goes here -->
+                        <canvas id="bar-graph"></canvas>
+                    </div>
+                </article>
+
+                <article class="doughnut">
+                    <h3>Mobile Users</h3>
+                    <div class="widget-container-half">
+                        <!-- js goes here -->
+                        <canvas id="doughnut-graph"></canvas>
+                    </div>
+                </article>
+
+            </section>
+
+             <!-- 4th Section -->
+            <section class="social">
+
+                <h3>Social Stats</h3>
+                <section class="social-group">
+                <div class="social-square">
+                    <div class="social-image">
+                        <img src="images/icons/icon-twitter.svg">
+                    </div>
+                    <div class="social-text">
+                        <p>Twitter</p>
+                        <p>10,345</p>
+                    </div>
+                 </div>
+
+                 <div class="social-square">
+                    <div class="social-image">
+                        <img src="images/icons/icon-facebook.svg">
+                    </div>
+                    <div class="social-text">
+                        <p>Facebook</p>
+                        <p>8,739</p>
+                    </div>
+                </div>
+
+                <div class="social-square">
+                    <div class="social-image">
+                        <img src="images/icons/icon-google-plus.svg">
+                    </div>
+                    <div class="social-text">
+                        <p>Google+</p>
+                        <p>2,530</p>
+                    </div>
+                 </div>
+                </section>
+            </section>
+
+             <!-- 5th Section -->
+            <section class="members-activity">
+                
+                <section class="members">
+                    <h3>New members</h3>
+                    <div class="person">
+                        <img src="images/member-1.jpg" alt="member one">
+                        <div class="person-text">
+                            <p>Victoria Chambers</p>
+                            <a class="person-mail" href="mailto:victoria.chambers80@example.com">chambers80@example.com</a>
+                        </div>
+                        <p>10/15/15</p>
+                    </div>
+                </section>
+            
+
+            <section class="members">
+                
+                <div class="person">
+                    <img src="images/member-2.jpg" alt="member two">
+                    <div class="person-text">
+                        <p>Dale Byrd</p>
+                        <a class="person-mail" href="mailto:dale.byrd52@example.com">dale.byrd@example.com</a>
+                    </div>
+                    <p>10/15/15</p>
+                </div>
+            </section>
+        
+
+        <section class="members">
+                
+            <div class="person">
+                <img src="images/member-3.jpg" alt="member three">
+                <div class="person-text">
+                    <p>Dawn Wood</p>
+                    <a class="person-mail" href="mailto:dawn.wood16@example.com">dawn.wood16@example.com</a>
+                </div>
+                <p>10/15/15</p>
+            </div>
+        </section>
+    
+
+    <section class="members">
+                
+        <div class="person">
+            <img src="images/member-4.jpg" alt="member four">
+            <div class="person-text">
+                <p>Dan Oliver</p>
+                <a class="person-mail" href="mailto:dan.oliver82@example.com">dan.oliver82@example.com</a>
+            </div>
+            <p>10/15/15</p>
+        </div>
+    </section>
+
+
+
+        </section>
+
+
+        </main>
+    </div>
+</body>
+</html>
