@@ -77,7 +77,6 @@ header h3 {
 .members h3,
 .social h3,
 .message h3,
-.traffic-header h3,
 .settings h3 {
     text-transform: uppercase;
 }
@@ -87,17 +86,6 @@ header h3 {
 .input h4 {
     padding-left: 50px;
   }
-
-  /* BUTTONS */
-  button {
-   
-    background-color: var(--second-bg-color);
-    height: 30px;
-    color: var(--border-color);
-    font-size: var(--font-size-s-factor);
-    border-radius: 5px; 
-}
-
  /* ----------------- header */
 
  /* Containers  */
@@ -163,6 +151,10 @@ header h3 {
     margin: auto;
     display: flex;
     justify-content: space-between;
+   
+    
+    
+    
 }
 
   .search-input {
@@ -210,7 +202,9 @@ header h3 {
     align-items: center;
     justify-content: space-between;
 }
-
+.traffic-header h3 {
+    text-transform: uppercase;
+}
 .traffic-nav {
  
     display: flex;
@@ -319,7 +313,7 @@ header h3 {
     font-size: var(--font-size-xs-factor);
 }
 
-
+/* COMMON STYLES FOR ALL SECTIONS */
 
 /* 6TH SECTION */
 
@@ -375,7 +369,11 @@ textarea {
     width: 90%;
     margin: 0 auto;
     display: block;
-   
+    background-color: var(--second-bg-color);
+    height: 30px;
+    color: var(--border-color);
+    font-size: var(--font-size-s-factor);
+    border-radius: 5px;
 }
 
 /* SETTINGS BLOCK */
@@ -411,7 +409,11 @@ textarea {
 .settings-button button {
     width: 45%;
     margin-top: 10px;
-    
+    background-color: var(--second-bg-color);
+    height: 30px;
+    color: var(--border-color);
+    font-size: var(--font-size-s-factor);
+    border-radius: 5px;
 }
 
 
@@ -535,7 +537,7 @@ border-left: 1px solid var(--border-color);
     .bloque-2 {
         width: 50%;
     }
-  /* Message section */
+  
    form input {
        height: 30px;
    }
@@ -545,16 +547,8 @@ border-left: 1px solid var(--border-color);
    .message button {
        height: 40px;
    }
-/* Settings */
 
-.notifications p {
-    font-size: var(--font-size-m-factor);
-   
-}
-  .notifications label {
-      width: 25%;
-     
-  }
+  
 }
 
 

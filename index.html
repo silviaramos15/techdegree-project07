@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normaliz.css">
     <link rel="stylesheet" href="css/styles.css">
+     <link rel="stylesheet" href="css/toggle-switch-rem.css">
     <link href="https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
 	<title>Web App Dashboard</title>
@@ -131,7 +132,7 @@
 
              <!-- 5th Section -->
             <section class="members-activity">
-                
+                <div class="bloque">
                 <section class="members">
                     <h3>New members</h3>
                     <div class="person">
@@ -182,13 +183,115 @@
             <p>10/15/15</p>
         </div>
     </section>
+</div>
+<div class="bloque board">
 
-
-
+        <section class="members">
+            <h3>Recent Activity</h3>
+            <div class="person arrow">
+                <img src="images/member-1.jpg" alt="member one">
+                <div class="member-text">
+                    <p>Victoria Chambers commented on YourApp's SEP Tips</p>
+                    <p>4 hours ago</p>
+                </div>
+            </div>
         </section>
 
+        <section class="members">
+            <div class="person arrow">
+                <img src="images/member-2.jpg" alt="member two">
+                <div class="member-text">
+                    <p>Dale Byrd like the post Facebook's Changes for 2016</p>
+                    <p>5 hours ago</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="members">
+            <div class="person arrow">
+                <img src="images/member-3.jpg" alt="member three">
+                <div class="member-text">
+                    <p>Dawn Wood commented on Facebook's Changes for 2016</p>
+                    <p>5 hours ago</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="members">
+            <div class="person arrow">
+                <img src="images/member-4.jpg" alt="member four">
+                <div class="member-text">
+                    <p>Dan Oliver posted YourApp's SEO Tips</p>
+                    <p>1 day ago</p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- MESSAGE CONTAINER -->
+    <section class="user-interaction">
+        <div class="bloque-2">
+            <!-- MESSAGES -->
+            <section class="message">
+                <h3>Message User</h3>
+                <form class="widget-container">
+                    <fieldset>
+                    <input type="text" placeholder="Search for user" class="form-field" id="userField">
+                    <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
+                </fieldset>
+                    <button class="button-primary" id="send">Send</button>
+                </form>
+            </section>
+        </div>
+
+
+        <div class="bloque-2">
+            <!-- SETTINGS -->
+            <section class="settings">
+                <h3>Settings</h3>
+                <!-- Custom CSS Toggle code -->
+                <div class="notifications">
+                    <p>Send Email Notifications</p>
+                    <label class="switch-light switch-ios" onclick="">
+                        <input type="checkbox">
+                        <span>
+                          <span>Off</span>
+                          <span>On</span>
+                          <a></a>
+                        </span>
+                      </label>
+                </div>
+                <div class="notifications">
+                    <p>Set Profile to Public</p>
+                    <label class="switch-light switch-ios" onclick="">
+                        <input type="checkbox">
+                        <span>
+                          <span>Off</span>
+                          <span>On</span>
+                          <a></a>
+                        </span>
+                      </label>
+                </div>
+
+                <!-- Custom CSS Toggle code -->
+
+                <select class="form-selector" id="timezone">
+                    <option disabled selected>Select a Timezone</option>
+                    <option></option>
+                </select>
+
+                <div class="settings-button">
+                    <button class="button-primary" id="save">Save</button>
+                    <button class="button-disabled" id="cancel">Cancel</button>
+                </div>
+            </section>
+        </div>
+    </section>
 
         </main>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/javascript.js"></script>
 </body>
 </html>
