@@ -26,7 +26,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: minmax(60px, 1fr) 12fr;
-    grid-template-rows: 70px 90%;
+    grid-template-rows: 70px 1fr;
     grid-template-areas:
         "header header"
         "nav main";
@@ -96,6 +96,14 @@ header h3 {
     color: var(--border-color);
     font-size: var(--font-size-s-factor);
     border-radius: 5px; 
+}
+.notifications span {
+    font-size: var(--font-size-s-factor);
+    padding-top: 3px;
+    
+}
+.settings label {
+    padding-top: 10px;
 }
 
  /* ----------------- header */
@@ -245,6 +253,7 @@ header h3 {
   
     border: 1px solid var(--border-color);
     margin-bottom: .8em;
+    padding: 0 70px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -282,6 +291,7 @@ header h3 {
     width: 95%;
     margin: 0 auto;
     margin-top: 10px;
+    height: 60px;
    
 }
 
@@ -387,6 +397,12 @@ textarea {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    
+}
+
+.bloque-2 {
+    height: 300px;
+   
 }
 .settings p {
     font-size: var(--font-size-s-factor);
@@ -395,7 +411,7 @@ textarea {
 }
 .notifications label {
     width: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 #timezone,
@@ -407,11 +423,16 @@ textarea {
 .settings-button {
     display: flex;
     justify-content: space-between;
+    
 }
 .settings-button button {
     width: 45%;
     margin-top: 10px;
     
+    
+}
+.form-selector {
+    height: 25px;
 }
 
 
@@ -546,15 +567,20 @@ border-left: 1px solid var(--border-color);
        height: 40px;
    }
 /* Settings */
-
+.notifications {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  
+}
 .notifications p {
     font-size: var(--font-size-m-factor);
-   
+    width: 50%;
 }
   .notifications label {
       width: 25%;
      
   }
+  
 }
 
 
