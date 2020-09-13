@@ -29,7 +29,7 @@ body {
     grid-template-rows: 70px 1fr;
     grid-template-areas:
         "header header"
-        "nav main";
+        "main main";
 }
 
 header {
@@ -440,6 +440,16 @@ textarea {
 
 /* ---------------- MEDIA QUERIES */
 @media (min-width: 758px) {
+    .wrap {
+    
+    grid-template-areas:
+        "header header"
+        "nav main";
+}
+
+
+
+
     /* ---HEADER */
     .header-container {
         width: 30%;
@@ -610,3 +620,56 @@ border-left: 1px solid var(--border-color);
     }
    
 }
+
+
+/*---------- Hamburger menu ------------*/
+
+@media only screen and (max-width:765px) {
+
+  nav {
+      position: absolute;
+      top: 70px;
+      height: 0;
+      overflow: hidden;
+     
+  }
+
+  .site_nav_open {
+      height: auto;
+  }
+  .nav-icons a{
+      display: block;
+      padding: 1em 2em;
+ 
+  }
+.nav-icons a:hover {
+    background: var(--main-bg-color);
+}
+
+.menu-toggle {
+    padding: .8em;
+    position: absolute;
+    top: 45px;
+    left: 30px;
+    cursor: pointer;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: #ebebd3;
+    height: 2px;
+    width: .7em;
+    border-radius: 3px;
+    content: ' ';
+    display: block;
+}
+.hamburger::before {
+    transform: translateY(-5px);
+}
+.hamburger::after {
+    transform: translateY(3px);
+}
+.open .hamburger {
+    transform: rotate(-45deg);
+}
+  }

@@ -6,3 +6,11 @@ $.each(timeZones, function(key, value) {
                    .attr("value", key)
                    .text(value)); 
 });
+
+// Hamburguer menu
+
+$('.menu-toggle').click(function(){
+    $('nav').toggleClass('site_nav_open',600);
+    $(this).toggleClass('open');
+  })
+  
