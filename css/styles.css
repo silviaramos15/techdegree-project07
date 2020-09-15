@@ -116,6 +116,7 @@ header h3 {
         top: 70px;
         height: 0;
         overflow: hidden;
+        z-index: 2;
        
     }
   
@@ -170,11 +171,23 @@ header h3 {
     height: 70%;
    justify-content: space-around;
    align-items: center;
+   position: relative;
 }
 
-/* .notifications {
+/* notifications */
+.graphic::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    left: 45px;
+    top: 12%;
 
-} */
+}
 
 .avatar {
     display: flex;
@@ -188,9 +201,12 @@ header h3 {
 /* Images */
 .graphic {
      width: 10%;
-     margin: 0 auto;   
+     margin: 0 auto;  
+     transition: .4s ease-in; 
  }
-
+ .graphic:hover {
+    transform: scale(1.2);
+}
 .avatar img {
      width: 32px;
      height: 28px;
@@ -280,6 +296,7 @@ header h3 {
 
 /* 3RDSECTION */
 .charts {
+    margin: 1.5em 0;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -289,10 +306,13 @@ header h3 {
 .doughnut {
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
-    max-width: 100%;
+    width: 100%;
     text-indent: 1.7em;
 }
-
+.widget-container-half {
+    max-width: 85%;
+    margin: 1em auto;
+}
 
 /* 4TH SECTION */
 .social {

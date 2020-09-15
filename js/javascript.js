@@ -29,6 +29,17 @@ $('.menu-toggle').click(function(){
     }
   });
 
+  // BELL NOTIFICATIONS
+// const bell = document.getElementsByClassName('graphic')[0];
+// const user_notification = document.getElementsByClassName('user-notification');
+// bell.addEventListener('click', () => {
+//     if (user_notification.style.display === "none") {
+//         user_notification.style.display = "block";
+//     } else {
+//         notifications.style.display = "none";
+//     }
+// });
+
   //CHART WIDGETS
         //Line graph
   let trafficCanvas = document.getElementById('traffic-chart');
@@ -36,11 +47,14 @@ $('.menu-toggle').click(function(){
       labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
       datasets: [{
       data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-      backgroundColor: 'rbga(255, 178, 38 .3)',
-      borderWidth: 1,
+      backgroundColor: 'rgba(255,178,38, .3)',
+      borderWidth: 3,
+      borderColor: 'rgba(255,165,0, .4)',
+      
+      
     }]
   };
-        //Object literal to set the iptions to be changed for the chart
+        //Object literal to set the options to be changed for the chart
     let trafficOptions = {
         aspectRatio: 2.5,
         animation: {
@@ -59,10 +73,99 @@ $('.menu-toggle').click(function(){
     };
 
         //Create chart itself
-    // const canvas = document.getElementsByClassName('canvas');
-    const canvas_traffic = document.getElementsByClassName('canvas')[0];
+   
     let trafficChart = new Chart (trafficCanvas, {
         type: 'line',
         data: trafficData,
         options: trafficOptions
     });
+
+//BAR GRAPH
+const dailyCanvas = document.getElementById('daily-chart');
+
+//data for daily traffic chart
+const dailyData = {
+    labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    datasets: [{
+        label: '# of Hits',
+        data: [75, 115, 175, 125, 225, 200, 100, 130],
+        backgroundColor: 'rgba(255,165,0, .3)',
+        borderWidth: 3,
+        borderColor: 'rgba(255,165,0, .4)',
+        hoverBackgroundColor: 'rgba(255,165,0)',
+        
+    }]
+};
+
+const dailyOptions = {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    },
+    legend: {
+        display: false
+    }
+}
+    //create a chart
+    let dailyChart = new Chart(dailyCanvas, {
+        type: 'bar',
+        data: dailyData,
+        options: dailyOptions
+    });
+
+//data for mobile chart
+const mobileCanvas = document.getElementById('mobile-chart');
+    //create an object literal for the data
+const mobileData = {
+    labels: ["Desktop", "Tablet", "Phones"],
+    datasets: [{
+        label: '# of users',
+        data: [2000, 550, 500],
+        borderWidth: 2,
+        backgroundColor: [
+            'rgba(255,165,0, .1)',
+            'rgba(255,165,0, .5)',
+            'rgba(255,165,0)'
+        ]
+    }]
+};
+    //Object literal for the options
+    const mobileOptions = {
+        legend: {
+            position: 'right',
+            labels: {
+                boxWidth: 20,
+                fontStyle: 'bold'
+            }
+        }
+    }
+    //creat a chart for the doughnout
+    let mobileChart = new Chart(mobileCanvas, {
+        type: 'doughnut',
+        data: mobileData,
+        options: mobileOptions
+    });
+
+    //Messaging section
+        //variables that store the form fields
+    const user = document.getElementById('userField');
+    const message = document.getElementById('messageField');
+    const send = document.getElementById('send');
+        //Click event listener on send
+    send.addEventListener('click', () => {
+        // conditional to make sure the user and message fields are not empty
+        if (user.value === '' && message.value === '') {
+            alert('Please, fill out user and message fields before sending');
+        } else if (user.value === '') {
+            alert('Please fill out the user field before sending');
+        } else if(message.value === '') {
+            alert('Please fill out the message field before sending');
+        } else {
+            alert(`Message has been succesfully sent to ${user.value}`);
+        }
+    });
+
+

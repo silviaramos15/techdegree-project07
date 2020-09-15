@@ -18,6 +18,7 @@
                     <div class="graphic">
                         <img src="images/icons/icon-bell.svg" alt="icon">
                     </div>
+                    <div class="user-notification"></div>
 
                    
                     <div class="avatar">
@@ -32,10 +33,10 @@
 
         <nav>
             <div class="nav-icons">
-                <a href="#"><img src="images/icons/icon-dashboard.svg" alt="dashboard"></a>
-                <a href="#"><img src="images/icons/icon-members.svg" alt="members"></a>
-                <a href="#"><img src="images/icons/icon-visits.svg" alt="visits"></a>
-                <a href="#"><img src="images/icons/icon-settings.svg" alt="settings"></a>
+                <a href="#traffic-chart"><img src="images/icons/icon-dashboard.svg" alt="dashboard"></a>
+                <a href="#members"><img src="images/icons/icon-members.svg" alt="members"></a>
+                <a href="#visits"><img src="images/icons/icon-visits.svg" alt="visits"></a>
+                <a href="#sett"><img src="images/icons/icon-settings.svg" alt="settings"></a>
             </div>
             
         </nav>
@@ -66,7 +67,7 @@
                         <li class="traffic-nav-link">Monthly</li>
                     </ul>
                 </div>
-                <div class="canvas" style="position: relative; height: 40vh; width: 80vh">
+                <div class="canvas" style="position: relative">
                     <!-- element line graph goes here -->
                     <canvas id="traffic-chart"></canvas>
                 </div>
@@ -78,17 +79,17 @@
                 <article class="bar">
                     <h3>Daily Traffic</h3>
 
-                    <div class="widget-container-half">
+                    <div class="widget-container-half" style="position: relative">
                         <!-- js goes here -->
-                        <canvas id="bar-graph"></canvas>
+                        <canvas id="daily-chart"></canvas>
                     </div>
                 </article>
 
                 <article class="doughnut">
                     <h3>Mobile Users</h3>
-                    <div class="widget-container-half">
+                    <div class="widget-container-half" style="position: relative">
                         <!-- js goes here -->
-                        <canvas id="doughnut-graph"></canvas>
+                        <canvas id="mobile-chart"></canvas>
                     </div>
                 </article>
 
@@ -134,7 +135,7 @@
             </section>
 
              <!-- 5th Section -->
-            <section class="members-activity">
+            <section class="members-activity" id="members">
                 <div class="bloque">
                     <h3>New members</h3>
                 <section class="members">
@@ -190,7 +191,7 @@
 </div>
 <div class="bloque board">
     <h3>Recent Activity</h3>
-        <section class="members">
+        <section class="members" id="visits">
             
             <div class="person arrow">
                 <img src="images/member-1.jpg" alt="member one">
@@ -254,7 +255,7 @@
 
         <div class="bloque-2">
             <!-- SETTINGS -->
-            <section class="settings">
+            <section class="settings" id="sett">
                 <h3>Settings</h3>
                 <!-- Custom CSS Toggle code -->
                 <div class="notifications">
@@ -297,6 +298,7 @@
         </main>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI="crossorigin="anonymous"></script>
     <script src="js/javascript.js"></script>
 </body>
 </html>
