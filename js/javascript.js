@@ -43,6 +43,20 @@ bell.addEventListener('click', () => {
 });
 
   //CHART WIDGETS
+
+  //Function for the activate links
+  const activateClass = clicked => {
+    const trafficLinks = document.querySelectorAll('.traffic-nav li');
+    trafficLinks.forEach(trafficLink => {
+      if(trafficLink === clicked) {
+        trafficLink.classList.add('activate');
+      } else {
+        trafficLink.classList.remove('activate');
+      }
+    });
+  };
+
+
         //Line graph
 function activate_chart (labels, data){
    
@@ -90,42 +104,42 @@ const data = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500, 3
 const labels= ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 activate_chart(labels,data)
-// monthly.classList.add('activate');
+
 
     //TRAFFIC CHART SWITCH
     //monthly data
     const monthly = document.getElementById('monthly');
-    monthly.addEventListener('click', () => {
+    monthly.addEventListener('click', e => {
         activate_chart(labels,data);
-        monthly.classList.add('activate');
+        activateClass(e.target);
     });
 
     //Hourly data
     const hourly = document.getElementById('hourly');
-    hourly.addEventListener('click', () => {
+    hourly.addEventListener('click', e => {
        const hourly_label = ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
        const hourly_data = [3, 7, 12, 19, 9, 1, 8, 10, 15, 12, 18];
         activate_chart(hourly_label, hourly_data);
-        hourly.classList.add('activate');
+        activateClass(e.target);
      
         
     });
     //daily data
     const daily = document.getElementById('daily');
-    daily.addEventListener('click', () => {
+    daily.addEventListener('click', e => {
         const daily_data = [10, 7, 9, 23, 19, 23, 8];
         const daily_label = ["Mon", "Tue", "Web", "Thu", "Fri", "Sat", "Sun"];
         activate_chart(daily_label, daily_data);
-        daily.classList.add('activate');
+        activateClass(e.target);
     });
 
   //weekly data
   const weekly = document.getElementById('weekly');
-  weekly.addEventListener('click', () => {
+  weekly.addEventListener('click', e => {
       const weekly_data = [115, 70, 23, 46, 72, 170, 91, 12];
       const weekly_label = ["01-07", "08-14", "15-21", "22-28", "29-31"];
       activate_chart(weekly_label, weekly_data);
-      weekly.classList.add('activate');
+      activateClass(e.target);
   });
 
 //BAR GRAPH
@@ -218,4 +232,52 @@ const mobileData = {
         }
     });
 
+// // Autocomplete search
+$(function() {
+    var userNames = [
+      "Victoria Chambers",
+      "Dale Byrd",
+      "Dawn Wood",
+      "Dan Oliver"
+    ];
+    $( "#userField" ).autocomplete({
+      source: userNames
+    });
+  } );
 
+  //LOCAL STORAGE
+  const emailNotification = document.getElementById('emailNotification');
+  const profilePublic = document.getElementById('profilePublic');
+  const timezone = document.getElementById('timezone');
+  const save = document.getElementById('save');
+  const cancel = document.getElementById('cancel');
+
+
+const mailStorage = localStorage.getItem('emailNotification');
+if (mailStorage && mailStorage === "true") {
+  emailNotification.checked = true;
+} else {
+  emailNotification.checked = false;
+}
+
+const profileStorage = localStorage.getItem('profilePublic');
+if (profileStorage && profileStorage === "true") {
+  profilePublic.checked = true;
+} else {
+  profilePublic.checked = false;
+}
+
+timezone.value = localStorage.getItem('timezone');
+
+save.addEventListener("click", () => {
+  event.preventDefault();
+  console.log("save button clicked");
+  localStorage.setItem('emailNotification', emailNotification.checked);
+  localStorage.setItem('profilePublic', profilePublic.checked);
+  localStorage.setItem('timezone', timezone.value);
+});
+
+cancel.addEventListener("click", () => {
+  event.preventDefault();
+  localStorage.clear();
+});

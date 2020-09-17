@@ -304,6 +304,14 @@ header h3 {
     font-style: italic;
     padding-left: 20px;
 }
+
+/* //autocomplete// */
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+
 /* 2ND SECTION */
 .traffic {
     width: 95%;
@@ -488,6 +496,7 @@ textarea {
     display: block;
    
 }
+
 
 /* SETTINGS BLOCK */
 /* .settings {
