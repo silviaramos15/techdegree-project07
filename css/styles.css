@@ -171,22 +171,43 @@ header h3 {
     height: 70%;
    justify-content: space-around;
    align-items: center;
-   position: relative;
+   
 }
 
 /* notifications */
-.graphic::after {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: red;
+.user-notification {
+    width: 10px;
+    height: 10px;
+    background-color: green;
     border-radius: 50%;
     z-index: 2;
+    position: relative;
+    margin-right: 50px;
+    margin-top: -15px;
+}
+.popUp {
+    background: var(--inputs-color);
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    display: block;
+    visibility: hidden;
     position: absolute;
-    left: 45px;
-    top: 12%;
+    top: 70px;
+    right:100px;
+    z-index: 4;
+    border: 1px solid var(--second-bg-color);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 
+}
+.popUp ul {
+    padding: 20px 10px;
+    
+}
+.close-popUp {
+    visibility: visible;
+    
 }
 
 .avatar {
@@ -196,6 +217,15 @@ header h3 {
     align-items: center;
     height: 40%;
     padding-right: 1.250em;
+}
+
+/* Graphic activate */
+.activate {
+    background-color: var(--main-bg-color);
+    color: white;
+    border: 1px solid var(--second-bg-color);
+    border-radius: 10px;
+    padding: 3px 8px;
 }
 
 /* Images */
@@ -571,6 +601,11 @@ textarea {
     .avatar img {
         width: 2.250em;
         height: 2em;
+    }
+    .popUp {
+        width: 50%;
+        right: 0;
+
     }
     /* MAIN */
  .input .search-input {

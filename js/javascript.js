@@ -30,23 +30,27 @@ $('.menu-toggle').click(function(){
   });
 
   // BELL NOTIFICATIONS
-// const bell = document.getElementsByClassName('graphic')[0];
-// const user_notification = document.getElementsByClassName('user-notification');
-// bell.addEventListener('click', () => {
-//     if (user_notification.style.display === "none") {
-//         user_notification.style.display = "block";
-//     } else {
-//         notifications.style.display = "none";
-//     }
-// });
+
+const bell = document.querySelector('.graphic');
+const user_notification = document.querySelector('.popUp');
+const ul = document.querySelector('ul');
+
+ul.innerHTML = `<li>You have 2 new requests</li>
+    <li>You have 1 new message in your inbox</li>`
+       
+bell.addEventListener('click', () => {
+    user_notification.classList.toggle("close-popUp");
+});
 
   //CHART WIDGETS
         //Line graph
+function activate_chart (labels, data){
+   
   let trafficCanvas = document.getElementById('traffic-chart');
   let trafficData = {
-      labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+      labels: labels,
       datasets: [{
-      data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+      data: data,
       backgroundColor: 'rgba(255,178,38, .3)',
       borderWidth: 3,
       borderColor: 'rgba(255,165,0, .4)',
@@ -79,6 +83,50 @@ $('.menu-toggle').click(function(){
         data: trafficData,
         options: trafficOptions
     });
+}
+
+//labels and data from monthly chart
+const data = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500, 3200]
+const labels= ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+activate_chart(labels,data)
+// monthly.classList.add('activate');
+
+    //TRAFFIC CHART SWITCH
+    //monthly data
+    const monthly = document.getElementById('monthly');
+    monthly.addEventListener('click', () => {
+        activate_chart(labels,data);
+        monthly.classList.add('activate');
+    });
+
+    //Hourly data
+    const hourly = document.getElementById('hourly');
+    hourly.addEventListener('click', () => {
+       const hourly_label = ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
+       const hourly_data = [3, 7, 12, 19, 9, 1, 8, 10, 15, 12, 18];
+        activate_chart(hourly_label, hourly_data);
+        hourly.classList.add('activate');
+     
+        
+    });
+    //daily data
+    const daily = document.getElementById('daily');
+    daily.addEventListener('click', () => {
+        const daily_data = [10, 7, 9, 23, 19, 23, 8];
+        const daily_label = ["Mon", "Tue", "Web", "Thu", "Fri", "Sat", "Sun"];
+        activate_chart(daily_label, daily_data);
+        daily.classList.add('activate');
+    });
+
+  //weekly data
+  const weekly = document.getElementById('weekly');
+  weekly.addEventListener('click', () => {
+      const weekly_data = [115, 70, 23, 46, 72, 170, 91, 12];
+      const weekly_label = ["01-07", "08-14", "15-21", "22-28", "29-31"];
+      activate_chart(weekly_label, weekly_data);
+      weekly.classList.add('activate');
+  });
 
 //BAR GRAPH
 const dailyCanvas = document.getElementById('daily-chart');
@@ -115,6 +163,8 @@ const dailyOptions = {
         data: dailyData,
         options: dailyOptions
     });
+
+    
 
 //data for mobile chart
 const mobileCanvas = document.getElementById('mobile-chart');
