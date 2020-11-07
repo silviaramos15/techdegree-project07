@@ -14,33 +14,6 @@ $('.menu-toggle').click(function(){
     $(this).toggleClass('open');
   })
   
-  //ALERT BANNER
-  const alertBanner = document.getElementById('alert');
-        //   Create the html for the banner:
-  alertBanner.innerHTML = `<div class="alert-banner">
-                        <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
-                        <p class="alert-banner-close">x</p>
-                        </div>`;
-        // Add a click event listener to the alert banner:
-  alertBanner.addEventListener('click', e => {
-    const element = e.target;
-    if (element.classList.contains("alert-banner-close")) {
-        alertBanner.style.display = 'none';
-    }
-  });
-
-  // BELL NOTIFICATIONS
-
-const bell = document.querySelector('.graphic');
-const user_notification = document.querySelector('.popUp');
-const ul = document.querySelector('ul');
-
-ul.innerHTML = `<li>You have 2 new requests</li>
-    <li>You have 1 new message in your inbox</li>`
-       
-bell.addEventListener('click', () => {
-    user_notification.classList.toggle("close-popUp");
-});
 
   //CHART WIDGETS
 
@@ -58,19 +31,27 @@ bell.addEventListener('click', () => {
 
 
         //Line graph
-function activate_chart (labels, data){
+function activate_chart (labels, data, data2){
    
   let trafficCanvas = document.getElementById('traffic-chart');
   let trafficData = {
       labels: labels,
       datasets: [{
+      label: 'Current',
       data: data,
-      backgroundColor: 'rgba(255,178,38, .3)',
+      backgroundColor: 'rgba(211,228,229, .3)',
       borderWidth: 3,
-      borderColor: 'rgba(255,165,0, .4)',
-      
-      
-    }]
+      borderColor: 'rgba(197,220,221, .4)',
+      }, {
+        label: 'Prediction',
+        data: data2,
+        backgroundColor: 'rgba(211,228,229, .3)',
+        borderWidth: 3,
+        borderColor: 'rgba(197,220,221, .9)',
+        
+        
+      }
+    ]
   };
         //Object literal to set the options to be changed for the chart
     let trafficOptions = {
@@ -101,82 +82,50 @@ function activate_chart (labels, data){
 
 //labels and data from monthly chart
 const data = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500, 3200]
+const data2 = [250, 1150, 1200, 2450, 1100, 1350, 1610, 1800, 2210, 1510, 2200, 3100]
 const labels= ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-activate_chart(labels,data)
+activate_chart(labels,data, data2)
 
 
     //TRAFFIC CHART SWITCH
-    //monthly data
-    const monthly = document.getElementById('monthly');
-    monthly.addEventListener('click', e => {
-        activate_chart(labels,data);
+    //water data
+    const water = document.getElementById('water');
+    water.addEventListener('click', e => {
+        activate_chart(labels,data,data2);
         activateClass(e.target);
     });
 
-    //Hourly data
-    const hourly = document.getElementById('hourly');
-    hourly.addEventListener('click', e => {
-       const hourly_label = ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
-       const hourly_data = [3, 7, 12, 19, 9, 1, 8, 10, 15, 12, 18];
-        activate_chart(hourly_label, hourly_data);
+    //Accustic data
+    const accustic = document.getElementById('accustic');
+    accustic.addEventListener('click', e => {
+       const accustic_label = ["07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
+       const accustic_data = [3, 7, 12, 19, 9, 1, 8, 10, 15, 12, 18];
+       const accustic_data2 = [5, 17, 11, 10, 9, 1, 5, 12, 18, 15, 17];
+        activate_chart(accustic_label, accustic_data, accustic_data2);
         activateClass(e.target);
-     
-        
+ 
     });
-    //daily data
-    const daily = document.getElementById('daily');
-    daily.addEventListener('click', e => {
-        const daily_data = [10, 7, 9, 23, 19, 23, 8];
-        const daily_label = ["Mon", "Tue", "Web", "Thu", "Fri", "Sat", "Sun"];
-        activate_chart(daily_label, daily_data);
+    //Optic data
+    const optic= document.getElementById('optic');
+    optic.addEventListener('click', e => {
+        const optic_data = [10, 7, 9, 23, 19, 23, 8];
+        const optic_data2 = [10, 7, 12, 25, 15, 20, 9];
+        const optic_label = ["Mon", "Tue", "Web", "Thu", "Fri", "Sat", "Sun"];
+        activate_chart(optic_label, optic_data, optic_data2);
         activateClass(e.target);
     });
 
-  //weekly data
-  const weekly = document.getElementById('weekly');
-  weekly.addEventListener('click', e => {
-      const weekly_data = [115, 70, 23, 46, 72, 170, 91, 12];
-      const weekly_label = ["01-07", "08-14", "15-21", "22-28", "29-31"];
-      activate_chart(weekly_label, weekly_data);
+  //Sonar data
+  const sonar = document.getElementById('sonar');
+  sonar.addEventListener('click', e => {
+      const sonar_data = [115, 70, 23, 46, 72, 170, 91, 12];
+      const sonar_data2 = [100, 50, 20, 41, 70, 120, 81, 2];
+      const sonar_label = ["01-07", "08-14", "15-21", "22-28", "29-31"];
+      activate_chart(sonar_label, sonar_data, sonar_data2);
       activateClass(e.target);
   });
 
-//BAR GRAPH
-const dailyCanvas = document.getElementById('daily-chart');
-
-//data for daily traffic chart
-const dailyData = {
-    labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-    datasets: [{
-        label: '# of Hits',
-        data: [75, 115, 175, 125, 225, 200, 100, 130],
-        backgroundColor: 'rgba(255,165,0, .3)',
-        borderWidth: 3,
-        borderColor: 'rgba(255,165,0, .4)',
-        hoverBackgroundColor: 'rgba(255,165,0)',
-        
-    }]
-};
-
-const dailyOptions = {
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true
-            }
-        }]
-    },
-    legend: {
-        display: false
-    }
-}
-    //create a chart
-    let dailyChart = new Chart(dailyCanvas, {
-        type: 'bar',
-        data: dailyData,
-        options: dailyOptions
-    });
 
     
 
@@ -184,15 +133,20 @@ const dailyOptions = {
 const mobileCanvas = document.getElementById('mobile-chart');
     //create an object literal for the data
 const mobileData = {
-    labels: ["Desktop", "Tablet", "Phones"],
+    labels: ["Chemical Industrial", "Construction", "Pesticide", "Oil", "Domestic", "Agricultural", "Natural", "Other"],
     datasets: [{
-        label: '# of users',
-        data: [2000, 550, 500],
+        label: '# porcentage in 2016',
+        data: [9, 7, 3, 39, 13, 13, 6, 7],
         borderWidth: 2,
         backgroundColor: [
-            'rgba(255,165,0, .1)',
-            'rgba(255,165,0, .5)',
-            'rgba(255,165,0)'
+            'rgba(0,139,139, 1)',
+            'rgba(122,174,176, 1)',
+            'rgba(149,191,192, 1)',
+            'rgba(183,218,213, 1)',
+            'rgba(129,178,180, 1)',
+            'rgba(197,220,221, 1)',
+            'rgba(211,228,229, 1)',
+            'rgba(224,236,237, 1)',
         ]
     }]
 };
@@ -212,72 +166,3 @@ const mobileData = {
         data: mobileData,
         options: mobileOptions
     });
-
-    //Messaging section
-        //variables that store the form fields
-    const user = document.getElementById('userField');
-    const message = document.getElementById('messageField');
-    const send = document.getElementById('send');
-        //Click event listener on send
-    send.addEventListener('click', () => {
-        // conditional to make sure the user and message fields are not empty
-        if (user.value === '' && message.value === '') {
-            alert('Please, fill out user and message fields before sending');
-        } else if (user.value === '') {
-            alert('Please fill out the user field before sending');
-        } else if(message.value === '') {
-            alert('Please fill out the message field before sending');
-        } else {
-            alert(`Message has been succesfully sent to ${user.value}`);
-        }
-    });
-
-// // Autocomplete search
-$(function() {
-    var userNames = [
-      "Victoria Chambers",
-      "Dale Byrd",
-      "Dawn Wood",
-      "Dan Oliver"
-    ];
-    $( "#userField" ).autocomplete({
-      source: userNames
-    });
-  } );
-
-  //LOCAL STORAGE
-  const emailNotification = document.getElementById('emailNotification');
-  const profilePublic = document.getElementById('profilePublic');
-  const timezone = document.getElementById('timezone');
-  const save = document.getElementById('save');
-  const cancel = document.getElementById('cancel');
-
-
-const mailStorage = localStorage.getItem('emailNotification');
-if (mailStorage && mailStorage === "true") {
-  emailNotification.checked = true;
-} else {
-  emailNotification.checked = false;
-}
-
-const profileStorage = localStorage.getItem('profilePublic');
-if (profileStorage && profileStorage === "true") {
-  profilePublic.checked = true;
-} else {
-  profilePublic.checked = false;
-}
-
-timezone.value = localStorage.getItem('timezone');
-
-save.addEventListener("click", () => {
-  event.preventDefault();
-  console.log("save button clicked");
-  localStorage.setItem('emailNotification', emailNotification.checked);
-  localStorage.setItem('profilePublic', profilePublic.checked);
-  localStorage.setItem('timezone', timezone.value);
-});
-
-cancel.addEventListener("click", () => {
-  event.preventDefault();
-  localStorage.clear();
-});

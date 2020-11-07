@@ -10,66 +10,56 @@
     <!-- <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"> -->
    
   
-	<title>Web App Dashboard</title>
+	<title>Sealight</title>
 </head>
 <body>
     <div class="wrap">
         <header>
-            <h3>Your<span>App&trade;</span></h3>
+            <h3>Deep<span>Dive</span></h3>
             <div class="header-container">
-                    <div class="graphic">
-                        <img src="images/icons/icon-bell.svg" alt="icon">
+                    <div class="marine">
+                        <h5><a href="https://thpoint0.io/hackathons/marinetech-virtual-hackathon-2020/" target="_blank">MarineTech 2020</a></h5>
                     </div>
-                    <div class="user-notification"></div>
-                    <div class="popUp">
-                        <ul></ul>
-                        </ul>
-                    </div>
-                   
-                    <div class="avatar">
-                        <img src="images/myAvatar.png" alt="My profile picture">
-                        <h5>Silvia Ramos</h5>
-                    </div>
+                  
             </div>
             <div class="menu-toggle">
-                <div class="hamburger"></div>
+                <div class="hamburger">     
+            </div>
         </header>
         
 
         <nav>
             <div class="nav-icons">
                 <a href="#traffic-chart"><img src="images/icons/icon-dashboard.svg" alt="dashboard"></a>
-                <a href="#members"><img src="images/icons/icon-members.svg" alt="members"></a>
-                <a href="#visits"><img src="images/icons/icon-visits.svg" alt="visits"></a>
-                <a href="#sett"><img src="images/icons/icon-settings.svg" alt="settings"></a>
+                <a href="#charts"><img src="images/icons/icon-members.svg" alt="members"></a>
+                <a href="#problems"><img src="images/icons/icon-visits.svg" alt="visits"></a>
+                <!-- <a href="#sett"><img src="images/icons/icon-settings.svg" alt="settings"></a> -->
             </div>
+          
             
         </nav>
 
-        <main>
+
+ <main>
         <section class="widget">
             <!-- First Section -->
-            <section class="input">
-                <h4>Dashboard</h4>
-                <div class="search-input">
-                    <input id="search" type="text" placeholder="Search" autocomplete="off">
+            <section class="title">
+                <h3>Sea<span>Light</span></h3>
+                <div class="sealight_intro">
+                    <p>Do you know what's happening in the <b>seas</b>? What can we do to combat this change?</p>
                 </div>
             </section>
 
-            <!-- Alert bar -->
-            <div class="alert" id="alert">
-                <!-- JS goes here -->
-            </div>
 
              <!-- 2nd Section -->
             <section class="traffic">
                 <div class="traffic-header">
-                    <h3>Traffic</h3>
+                    <h3>Data</h3>
                     <ul class="traffic-nav">
-                        <li id="hourly" class="traffic-nav-link">Hourly</li>
-                        <li id ="daily" class="traffic-nav-link">Daily</li>
-                        <li id ="weekly" class="traffic-nav-link">Weekly</li>
-                        <li id ="monthly" class="traffic-nav-link activate">Monthly</li>
+                        <li id="accustic" class="traffic-nav-link">Accustic</li>
+                        <li id ="optic" class="traffic-nav-link">Optic</li>
+                        <li id ="sonar" class="traffic-nav-link">Sonar</li>
+                        <li id ="water" class="traffic-nav-link activate">Water</li>
                     </ul>
                 </div>
                 <div class="canvas" style="position: relative">
@@ -79,229 +69,70 @@
             </section>
 
              <!-- 3rd Section -->
-            <section class="charts">
-
-                <article class="bar">
-                    <h3>Daily Traffic</h3>
-
-                    <div class="widget-container-half" style="position: relative">
-                        <!-- js goes here -->
-                        <canvas id="daily-chart"></canvas>
-                    </div>
-                </article>
-
+            <section class="charts" id="charts">
                 <article class="doughnut">
-                    <h3>Mobile Users</h3>
+                    <h3>Causes</h3>
                     <div class="widget-container-half" style="position: relative">
                         <!-- js goes here -->
                         <canvas id="mobile-chart"></canvas>
                     </div>
                 </article>
 
-            </section>
-        </section>
-    </section>
+                <article class="bar">
+                    <h3>How can we reduce these problems?</h3>
+                    
 
-             <!-- 4th Section -->
-            <section class="social">
-
-                <h3>Social Stats</h3>
-                <section class="social-group">
-                <div class="social-square">
-                    <div class="social-image">
-                        <img src="images/icons/icon-twitter.svg" alt="Twitter icon">
-                    </div>
-                    <div class="social-text">
-                        <p>Twitter</p>
-                        <p>10,345</p>
-                    </div>
-                 </div>
-
-                 <div class="social-square">
-                    <div class="social-image">
-                        <img src="images/icons/icon-facebook.svg" alt="Facebook icon">
-                    </div>
-                    <div class="social-text">
-                        <p>Facebook</p>
-                        <p>8,739</p>
-                    </div>
-                </div>
-
-                <div class="social-square">
-                    <div class="social-image">
-                        <img src="images/icons/icon-google-plus.svg" alt="Google icon">
-                    </div>
-                    <div class="social-text">
-                        <p>Google+</p>
-                        <p>2,530</p>
-                    </div>
-                 </div>
-                </section>
-            </section>
-
-             <!-- 5th Section -->
-            <section class="members-activity" id="members">
-                <div class="bloque">
-                    <h3>New members</h3>
-                <section class="members">
-                   
-                    <div class="person">
-                        <img src="images/member-1.jpg" alt="member one">
-                        <div class="person-text">
-                            <p>Victoria Chambers</p>
-                            <a class="person-mail" href="mailto:victoria.chambers80@example.com">chambers80@example.com</a>
+                    <div class="widget-container-half" style="position: relative">
+                        <div class="problems" id="problems">
+                            <div class="problem-item">
+                                <div class="item-img">
+                                    <img src="images/icons/botella-de-plastico.svg" alt="Plastic bottle">
+                                </div>
+                                <p class="item1">Try to avoid plastic containers</p>
+                            </div>
+                            <div class="problem-item">
+                                <div class="item-img">
+                                    <img src="images/icons/camada.svg" alt="Litter">
+                                </div>
+                                <p class="item1">Do not throw litter into rivers</p>
+                            </div>
+                            <div class="problem-item">
+                                <div class="item-img">
+                                    <img src="images/icons/inodoro.svg" alt="toilet">
+                                </div>
+                                <p class="item1">Do not throw  any form of litter down the drain</p>
+                            </div>
                         </div>
-                        <p>10/15/15</p>
-                    </div>
-                </section>
             
-
-            <section class="members">
-                
-                <div class="person">
-                    <img src="images/member-2.jpg" alt="member two">
-                    <div class="person-text">
-                        <p>Dale Byrd</p>
-                        <a class="person-mail" href="mailto:dale.byrd52@example.com">dale.byrd@example.com</a>
+                        <div class="problems row2">
+                            <div class="problem-item">
+                                <div class="item-img">
+                                    <img src="images/icons/organic-food.svg" alt="organic food">
+                                </div>
+                                <p class="item1">Eat more organic food</p>
+                            </div>
+                            <div class="problem-item">
+                                <div class="item-img">
+                                    <img src="images/icons/pesticida.svg" alt="pesticide">
+                                </div>
+                                <p class="item1">Do not over use pesticides/fertilisers</p>
+                            </div>
+                            <div class="problem-item">
+                                <div class="item-img">
+                                    <img src="images/icons/grifo.svg" alt="Sink">
+                                </div>
+                                <p class="item1">Turn off the tap when running water</p>
+                            </div>
+                        </div>
                     </div>
-                    <p>10/15/15</p>
-                </div>
-            </section>
-        
+                </article>
+             </section>
 
-        <section class="members">
-                
-            <div class="person">
-                <img src="images/member-3.jpg" alt="member three">
-                <div class="person-text">
-                    <p>Dawn Wood</p>
-                    <a class="person-mail" href="mailto:dawn.wood16@example.com">dawn.wood16@example.com</a>
-                </div>
-                <p>10/15/15</p>
-            </div>
-        </section>
+
+
+</main>
+
     
-
-    <section class="members">
-                
-        <div class="person">
-            <img src="images/member-4.jpg" alt="member four">
-            <div class="person-text">
-                <p>Dan Oliver</p>
-                <a class="person-mail" href="mailto:dan.oliver82@example.com">dan.oliver82@example.com</a>
-            </div>
-            <p>10/15/15</p>
-        </div>
-    </section>
-</div>
-<div class="bloque board">
-    <h3>Recent Activity</h3>
-        <section class="members" id="visits">
-            
-            <div class="person arrow">
-                <img src="images/member-1.jpg" alt="member one">
-                <div class="member-text">
-                    <p>Victoria Chambers commented on YourApp's SEP Tips</p>
-                    <p>4 hours ago</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="members">
-            <div class="person arrow">
-                <img src="images/member-2.jpg" alt="member two">
-                <div class="member-text">
-                    <p>Dale Byrd like the post Facebook's Changes for 2016</p>
-                    <p>5 hours ago</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="members">
-            <div class="person arrow">
-                <img src="images/member-3.jpg" alt="member three">
-                <div class="member-text">
-                    <p>Dawn Wood commented on Facebook's Changes for 2016</p>
-                    <p>5 hours ago</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="members">
-            <div class="person arrow">
-                <img src="images/member-4.jpg" alt="member four">
-                <div class="member-text">
-                    <p>Dan Oliver posted YourApp's SEO Tips</p>
-                    <p>1 day ago</p>
-                </div>
-            </div>
-        </section>
-</div>
-    </section>
-
-
-
-    <!-- MESSAGE CONTAINER -->
-    <section class="user-interaction">
-        <div class="bloque-2">
-            <!-- MESSAGES -->
-            <section class="message">
-                <h3>Message User</h3>
-                <form class="widget-container">
-                    <fieldset>
-                    <input type="text" placeholder="Search for user" class="form-field" id="userField">
-                    <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
-                </fieldset>
-                    <button class="button-primary" id="send">Send</button>
-                </form>
-            </section>
-        </div>
-
-
-        <div class="bloque-2">
-            <!-- SETTINGS -->
-            <section class="settings" id="sett">
-                <h3>Settings</h3>
-                <!-- Custom CSS Toggle code -->
-                <div class="notifications">
-                    <p>Send Email Notifications</p>
-                    <label class="switch-light switch-ios" onclick="">
-                        <input type="checkbox" id="emailNotification">
-                        <span>
-                          <span>Off</span>
-                          <span>On</span>
-                          <a></a>
-                        </span>
-                      </label>
-                </div>
-                <div class="notifications">
-                    <p>Set Profile to Public</p>
-                    <label class="switch-light switch-ios" onclick="">
-                        <input type="checkbox" id="profilePublic">
-                        <span>
-                          <span>Off</span>
-                          <span>On</span>
-                          <a></a>
-                        </span>
-                      </label>
-                </div>
-
-                <!-- Custom CSS Toggle code -->
-
-                <select class="form-selector" id="timezone">
-                    <option disabled selected>Select a Timezone</option>
-                </select>
-
-                <div class="settings-button">
-                    <button class="button-primary" id="save">Save</button>
-                    <button class="button-disabled" id="cancel">Cancel</button>
-                </div>
-            </section>
-        </div>
-    </section>
-
-        </main>
-    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI="crossorigin="anonymous"></script>    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
